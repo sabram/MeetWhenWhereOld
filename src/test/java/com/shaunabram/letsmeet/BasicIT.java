@@ -1,5 +1,7 @@
 package com.shaunabram.letsmeet;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +20,11 @@ public class BasicIT {
 
 		siteBase = new URI("http://localhost:8080/LetsMeet");
 		drv = new FirefoxDriver();
+	}
+
+	@After
+	public void tearDown() {
+		drv.quit();
 	}
 
 	@Test

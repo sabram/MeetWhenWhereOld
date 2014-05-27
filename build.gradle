@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'jetty'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
@@ -14,6 +15,26 @@ repositories {
 dependencies {
     testCompile(
             ['junit:junit:4.11'],
-            ['org.easytesting:fest-assert-core:2.0M10']
+            ['org.easytesting:fest-assert-core:2.0M10'],
+            ['org.seleniumhq.selenium:selenium-java:2.41.0']
+
     )
+}
+
+test {
+    exclude '**/*IT*'
+}
+
+task integrationTest(type: Test) {
+    include '**/*IT*'
+    doFirst {
+        jettyRun.httpPort = 8080    // Port for test
+        jettyRun.daemon = true
+        jettyRun.execute()
+    }
+    doLast {
+        jettyStop.stopPort = 8091   // Port for stop signal
+        jettyStop.stopKey = 'stopKey'
+        jettyStop.execute()
+    }
 }

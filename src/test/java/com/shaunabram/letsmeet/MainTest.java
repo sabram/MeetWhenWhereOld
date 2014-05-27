@@ -9,6 +9,6 @@ public class MainTest {
     @Test
     public void test() {
         Main main = new Main();
-        assertThat(main.getMsg()).isEqualTo("HelloWorld!");
+        assertThat(main.getMsg()).isEqualTo("Lets Meet!");
     }
 }

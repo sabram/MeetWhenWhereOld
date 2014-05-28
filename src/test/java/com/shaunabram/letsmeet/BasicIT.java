@@ -16,7 +16,7 @@ public class BasicIT {
 
 	@Before
 	public void setup() throws Exception {
-		siteBase = new URI("http://localhost:8080/LetsMeet");
+		siteBase = new URI("http://localhost:9090/LetsMeet");
 		drv = new FirefoxDriver();
 	}
 
@@ -26,9 +26,9 @@ public class BasicIT {
 	}
 
 	@Test
-	public void testWeSeeHelloWorld() {
+	public void testWeSeeGreeting() {
 		drv.get(siteBase.toString());
-		assertTrue(drv.getPageSource().contains("Hello World"));
+		assertTrue(drv.getPageSource().contains("Let's Meet!"));
 	}
 
 }

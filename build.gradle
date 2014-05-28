@@ -46,15 +46,15 @@ test {
     exclude '**/*IT*'
 }
 
-task integrationTest(type: Test) {
+task itest(type: Test) {
     include '**/*IT*'
     doFirst {
-        jettyRun.httpPort = 8080    // Port for test
+        jettyRun.httpPort = 9090    // Port for test
         jettyRun.daemon = true
         jettyRun.execute()
     }
     doLast {
-        jettyStop.stopPort = 8091   // Port for stop signal
+        jettyStop.stopPort = 9091   // Port for stop signal
         jettyStop.stopKey = 'stopKey'
         jettyStop.execute()
     }

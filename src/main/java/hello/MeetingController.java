@@ -7,19 +7,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class GreetingController {
+public class MeetingController {
 
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
-	public GreetingController() {
-		System.out.println("In GreetingController constructor");
+	public MeetingController() {
+		System.out.println("In MeetingController constructor");
 	}
 
-	@RequestMapping("/greeting")
-    public @ResponseBody Greeting greeting(
-            @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        return new Greeting(counter.incrementAndGet(),
+	@RequestMapping("/meeting")
+    public @ResponseBody
+	Meeting greeting(
+            @RequestParam(value="name", required=false, defaultValue="MyMeeting") String name) {
+        return new Meeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
 }

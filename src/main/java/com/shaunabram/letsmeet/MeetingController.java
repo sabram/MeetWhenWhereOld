@@ -18,7 +18,7 @@ public class MeetingController {
 
 	@RequestMapping("/meeting")
     public @ResponseBody
-	Meeting greeting(
+	Meeting meeting(
             @RequestParam(value="name", required=false, defaultValue="MyMeeting") String name) {
         return new Meeting(counter.incrementAndGet(),
                             String.format(template, name));

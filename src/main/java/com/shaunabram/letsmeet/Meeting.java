@@ -2,8 +2,10 @@ package com.shaunabram.letsmeet;
 
 public class Meeting {
 
-    private final long id;
-    private final String name;
+    private long id;
+    private String name;
+
+	public Meeting() {}//needed for json posts
 
     public Meeting(long id, String name) {
         this.id = id;

@@ -1,4 +1,4 @@
-package hello;
+package com.shaunabram.letsmeet;
 
 public class Meeting {
 

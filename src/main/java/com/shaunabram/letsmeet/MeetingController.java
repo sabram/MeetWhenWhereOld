@@ -1,4 +1,4 @@
-package hello;
+package com.shaunabram.letsmeet;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Controller;

@@ -1,7 +1,8 @@
 <!doctype html>
-<html data-ng-app>
+<html data-ng-app="letsMeet">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.10/angular.min.js"></script>
+    <!-- TODO change to angular-min; but leaving as full version for easier debugging now -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.10/angular.js"></script>
     <script src="meet.js"></script>
     <script src="todo.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.4.0/restangular.js"></script>
@@ -11,6 +12,7 @@
 Let's Meet!
 
 <div data-ng-controller="MeetingCtrl">
+    <p>The Meeting is {{meeting}}</p>
     <p>The ID is {{meeting.id}}</p>
     <p>The name is {{meeting.name}}</p>
 </div>

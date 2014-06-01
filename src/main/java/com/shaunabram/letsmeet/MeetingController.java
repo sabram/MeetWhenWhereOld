@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 @Controller
+@RequestMapping("/meetings")
 public class MeetingController {
 
-    private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
 	private static final Logger logger = LoggerFactory.getLogger(MeetingController.class);
@@ -19,18 +19,18 @@ public class MeetingController {
 		System.out.println("In MeetingController constructor");
 	}
 
-	@RequestMapping("/meeting")
-    public @ResponseBody
-	Meeting meeting(
-            @RequestParam(value="name", required=false, defaultValue="MyMeeting") String name) {
-        return new Meeting(counter.incrementAndGet(),
-                            String.format(template, name));
-    }
+//	@RequestMapping("/meeting")
+//    public @ResponseBody
+//	Meeting meeting(
+//            @RequestParam(value="name", required=false, defaultValue="MyMeeting") String name) {
+//        return new Meeting(counter.incrementAndGet(),
+//                            String.format(template, name));
+//    }
 
-	@RequestMapping("/meetings")
+	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody
 	List<Meeting> meetings() {
-		logger.debug("Returning all meetings");
+		System.out.println("Returning all meetings");
 		List<Meeting> meetings = new ArrayList<>();
 		Meeting m1 = new Meeting(1, "m1");
 		Meeting m2 = new Meeting(2, "m2");
@@ -39,10 +39,12 @@ public class MeetingController {
 		return meetings;
 	}
 
-	@RequestMapping(value = "/new", method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
-	public Meeting updateCustomer(@RequestBody Meeting meeting) {
-		System.out.println("I am in the controller and got user name: " + meeting.getName());
-		return new Meeting(counter.incrementAndGet(), meeting.getName());
+	public Meeting newMeeting(@RequestBody Meeting meeting) {
+		System.out.println("I am in the controller and got meeting: " + meeting);
+		Meeting returnMeeting = new Meeting(counter.incrementAndGet(), meeting.getName() + "newMeeting");
+		System.out.println("returning meeting: " + returnMeeting);
+		return returnMeeting;
 	}
 }

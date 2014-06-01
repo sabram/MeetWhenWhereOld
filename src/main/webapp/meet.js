@@ -4,11 +4,21 @@ letsMeetModule.controller('MeetingCtrl', function($scope, $http, Restangular) {
 
 //    $scope.meeting = Restangular.one('meeting').get().$object;
 
-    $scope.meetings = Restangular.all('meetings').getList().$object;
+    var baseMeetings = Restangular.all('meetings');
+
+// This will query /meetings and return a promise.
+    baseMeetings.getList().then(function(meetings) {
+        $scope.meetings = meetings;
+    });
 
 
 
     $scope.addMeeting = function() {
-        firstAccount.post("new", $scope.meeting)
+        console.log("addMeeting")
+        var newMeeting = {"id":8,"name":$scope.meetingName}
+        baseMeetings.post(newMeeting).then(function(response) {
+            $scope.meeting = response;
+            console.log(response);
+        });
     };
 });

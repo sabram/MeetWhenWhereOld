@@ -14,7 +14,19 @@
 Let's Meet!
 
 <div data-ng-controller="MeetingCtrl">
-    <input type="text" data-ng-model="todoText"  size="30" placeholder="enter new meeting name here">
+    <p>The Meetings:{{meetings}}</p>
+
+    <table>
+    <tbody>
+        <tr data-ng-repeat="meeting in meetings">
+            <td>{{meeting.id}}</td>
+            <td>{{meeting.name}}</td>
+        </tr>
+    </tbody>
+    </table>
+
+
+
     <p>The Meeting is {{meeting}}</p>
     <p>The ID is {{meeting.id}}</p>
     <p>The name is {{meeting.name}}</p>

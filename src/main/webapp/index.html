@@ -14,8 +14,8 @@
 Let's Meet!
 
 <div data-ng-controller="MeetingCtrl">
-    <p>The Meetings:{{meetings}}</p>
 
+    Your scheduled meetings:
     <table>
     <tbody>
         <tr data-ng-repeat="meeting in meetings">
@@ -25,15 +25,12 @@ Let's Meet!
     </tbody>
     </table>
 
-
+    Add a new meeting:
     <form data-ng-submit="addMeeting()">
         <input type="text" data-ng-model="meetingName"  size="30" placeholder="enter new meeting name here">
         <input class="btn-primary" type="submit" value="add">
     </form>
 
-    <p>Created a new meeting: {{meeting}}</p>
-    <p>The ID is {{meeting.id}}</p>
-    <p>The name is {{meeting.name}}</p>
 </div>
 
 <a href="todo.html">TODOs</a>

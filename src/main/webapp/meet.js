@@ -14,11 +14,12 @@ letsMeetModule.controller('MeetingCtrl', function($scope, $http, Restangular) {
 
 
     $scope.addMeeting = function() {
-        console.log("addMeeting")
-        var newMeeting = {"id":8,"name":$scope.meetingName}
+        console.log("addMeeting");
+        var newMeeting = {"id":8,"name":$scope.meetingName};
         baseMeetings.post(newMeeting).then(function(response) {
             $scope.meeting = response;
             console.log(response);
+            $scope.meetings.push(response);
         });
     };
 });

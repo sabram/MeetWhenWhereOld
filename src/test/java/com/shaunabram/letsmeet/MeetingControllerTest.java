@@ -1,17 +1,26 @@
 package com.shaunabram.letsmeet;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 
+@RunWith(MockitoJUnitRunner.class)
 public class MeetingControllerTest {
 
-    @Test
-    public void testMeetingControllerConstructor() {
-        MeetingService serviceMock = mock(MeetingService.class);
-        MeetingController controller = new MeetingController(serviceMock);
-        assertThat(controller.getMeetingService()).isNotNull();
+	@Mock
+	private MeetingService meetingService;
 
-    }
+	@InjectMocks
+	private MeetingController meetingController;
+
+	@Test
+	public void testMeetingControllerConstructorUsingDI() {
+		MeetingService returnedService = meetingController.getMeetingService();
+		assertThat(returnedService).isNotNull();
+	}
+
 }

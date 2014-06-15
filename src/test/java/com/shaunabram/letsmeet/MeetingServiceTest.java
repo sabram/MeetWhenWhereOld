@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-public class ServiceTest {
+public class MeetingServiceTest {
 
     @Test
     public void doStuff() {
-        Service service = new ServiceImpl();
-        String result = service.doStuff();
+        MeetingService meetingService = new MeetingServiceImpl();
+        String result = meetingService.doStuff();
         assertThat(result).isEqualTo("stuff");
     }
 }

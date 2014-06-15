@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.inject.Inject;
 @Controller
 @RequestMapping("/meetings")
 public class MeetingController {
@@ -15,8 +16,12 @@ public class MeetingController {
 
 	private static final Logger logger = LoggerFactory.getLogger(MeetingController.class);
 
-	public MeetingController() {
+    private MeetingService meetingService;
+
+    @Inject
+	public MeetingController(MeetingService meetingService) {
 		System.out.println("In MeetingController constructor");
+        this.meetingService = meetingService;
 	}
 
 //	@RequestMapping("/meeting")
@@ -47,4 +52,9 @@ public class MeetingController {
 		System.out.println("returning meeting: " + returnMeeting);
 		return returnMeeting;
 	}
+
+
+    public MeetingService getMeetingService() {
+        return meetingService;
+    }
 }

@@ -1,6 +1,5 @@
 package com.shaunabram.letsmeet;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Controller;
@@ -37,12 +36,7 @@ public class MeetingController {
 	public @ResponseBody
 	List<Meeting> meetings() {
 		System.out.println("Returning all meetings");
-		List<Meeting> meetings = new ArrayList<>();
-		Meeting m1 = new Meeting(1L, "m1");
-		Meeting m2 = new Meeting(2L, "m2");
-		meetings.add(m1);
-		meetings.add(m2);
-		return meetings;
+		return meetingService.getAllMeetings();
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

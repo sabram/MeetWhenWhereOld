@@ -1,10 +1,12 @@
 package com.shaunabram.letsmeet;
 
+
 import org.junit.Test;
 
 import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static com.shaunabram.letsmeet.MeetingFixtures.*;
 
 public class DaoTest {
 
@@ -19,7 +21,6 @@ public class DaoTest {
 	public void getAllMeetings() {
 		Dao dao = new DaoImpl();
 		List<Meeting> allMeetings = dao.getAllMeetings();
-		Meeting tstMeeting = new Meeting(1L, "tstMeeting");
-		assertThat(allMeetings).containsExactly(tstMeeting);
+		assertThat(allMeetings).containsExactly(MEETING);
 	}
 }

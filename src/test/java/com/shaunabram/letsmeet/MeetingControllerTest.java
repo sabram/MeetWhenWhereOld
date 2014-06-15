@@ -12,6 +12,7 @@ import java.util.List;
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static com.shaunabram.letsmeet.MeetingFixtures.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MeetingControllerTest {
@@ -30,8 +31,7 @@ public class MeetingControllerTest {
 
 	@Test
 	public void meetings_returns_meetings_from_service() {
-		Meeting tstMeeting = new Meeting(1L, "tstMeeting");
-		List<Meeting> expectedMeetings = Lists.newArrayList(tstMeeting);
+		List<Meeting> expectedMeetings = Lists.newArrayList(MEETING);
 		when(meetingService.getAllMeetings()).thenReturn(expectedMeetings);
 
 		//call method under test
@@ -39,7 +39,7 @@ public class MeetingControllerTest {
 
 		//verify results
 		verify(meetingService).getAllMeetings();
-		assertThat(meetings).containsExactly(tstMeeting);
+		assertThat(meetings).containsExactly(MEETING);
 	}
 
 }

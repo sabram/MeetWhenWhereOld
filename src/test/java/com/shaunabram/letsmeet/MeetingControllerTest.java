@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
 public class MeetingControllerTest {
 
     @Test
-    public void testDIWorks() {
+    public void testMeetingControllerConstructor() {
         MeetingService serviceMock = mock(MeetingService.class);
         MeetingController controller = new MeetingController(serviceMock);
         assertThat(controller.getMeetingService()).isNotNull();

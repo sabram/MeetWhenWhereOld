@@ -35,6 +35,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile('javax.inject:javax.inject:1')
+    compile('com.google.guava:guava:17.0')
 
     testCompile(
             ['junit:junit:4.11'],

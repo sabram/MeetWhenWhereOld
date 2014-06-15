@@ -38,8 +38,8 @@ public class MeetingController {
 	List<Meeting> meetings() {
 		System.out.println("Returning all meetings");
 		List<Meeting> meetings = new ArrayList<>();
-		Meeting m1 = new Meeting(1, "m1");
-		Meeting m2 = new Meeting(2, "m2");
+		Meeting m1 = new Meeting(1L, "m1");
+		Meeting m2 = new Meeting(2L, "m2");
 		meetings.add(m1);
 		meetings.add(m2);
 		return meetings;

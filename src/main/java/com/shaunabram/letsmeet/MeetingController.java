@@ -14,9 +14,9 @@ public class MeetingController {
 
     private final AtomicLong counter = new AtomicLong();
 
-	private static final Logger logger = LoggerFactory.getLogger(MeetingController.class);
+	private final Logger logger = LoggerFactory.getLogger(MeetingController.class);
 
-    private MeetingService meetingService;
+    private final MeetingService meetingService;
 
     @Inject
 	public MeetingController(MeetingService meetingService) {

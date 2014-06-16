@@ -1,9 +1,11 @@
 package com.shaunabram.letsmeet;
 
 import com.google.common.collect.Lists;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class DaoImpl implements Dao {
 
     @Override

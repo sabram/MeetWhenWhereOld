@@ -20,7 +20,7 @@ public class MeetingController {
 
     @Inject
 	public MeetingController(MeetingService meetingService) {
-		System.out.println("In MeetingController constructor");
+		logger.debug("In MeetingController constructor");
         this.meetingService = meetingService;
 	}
 
@@ -35,7 +35,7 @@ public class MeetingController {
 	@RequestMapping(method = RequestMethod.GET)
 	public @ResponseBody
 	List<Meeting> meetings() {
-		System.out.println("Returning all meetings");
+		logger.debug("Returning all meetings");
 		return meetingService.getAllMeetings();
 	}
 

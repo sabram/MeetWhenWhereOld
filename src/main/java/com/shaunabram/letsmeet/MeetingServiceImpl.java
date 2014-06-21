@@ -1,6 +1,5 @@
 package com.shaunabram.letsmeet;
 
-import com.google.common.collect.Lists;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;

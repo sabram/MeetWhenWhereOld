@@ -15,6 +15,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 public class SpringITest {
 
 	@Inject
+	@SuppressWarnings("SpringJavaAutowiringInspection") //IntelliJ doesn't seem to parse out annotations too well. All runs OK.
 	MeetingService meetingService;
 
 	@Test

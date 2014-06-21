@@ -22,7 +22,7 @@ public class DaoImpl implements Dao {
 
 	@Override
 	public List<Meeting> getAllMeetings() {
-		Meeting tstMeeting = new Meeting(1L, "tstMeeting");
+		Meeting tstMeeting = new Meeting(1L, "tstMeetingFromDao");
 		return Lists.newArrayList(tstMeeting);
 	}
 }

@@ -12,7 +12,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Application.class})
-public class SpringITest {
+public class SpringServiceITest {
 
 	@Inject
 	@SuppressWarnings("SpringJavaAutowiringInspection") //IntelliJ doesn't seem to parse out annotations too well. All runs OK.

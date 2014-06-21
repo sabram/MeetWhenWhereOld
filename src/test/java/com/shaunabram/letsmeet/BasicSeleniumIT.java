@@ -10,7 +10,7 @@ import java.net.URI;
 
 import static org.junit.Assert.assertTrue;
 
-public class BasicIT {
+public class BasicSeleniumIT {
 	private URI siteBase;
 	private WebDriver drv;
 

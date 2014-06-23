@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public class MeetingServiceImpl implements MeetingService {
 
 	private final Dao dao;
-	private static final Logger logger = LoggerFactory.getLogger(MeetingServiceImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(MeetingServiceImpl.class);
 
 	@Inject
 	public MeetingServiceImpl(Dao dao) {

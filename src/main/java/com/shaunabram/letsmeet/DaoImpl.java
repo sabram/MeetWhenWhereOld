@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public class DaoImpl implements Dao {
 
-	private static final Logger logger = LoggerFactory.getLogger(DaoImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(DaoImpl.class);
 
 	public DaoImpl() {
 		logger.debug("In DaoImpl constructor");

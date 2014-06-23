@@ -2,17 +2,17 @@ package com.shaunabram.letsmeet;
 
 public class Meeting {
 
-    private Long id;
+    private Integer id;
     private String name;
 
 	public Meeting() {}//needed for json posts
 
-    public Meeting(Long id, String name) {
+    public Meeting(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 

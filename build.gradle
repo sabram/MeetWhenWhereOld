@@ -42,7 +42,8 @@ dependencies {
             ['org.easytesting:fest-assert-core:2.0M10'],
             ['org.seleniumhq.selenium:selenium-java:2.41.0'],
             ['org.mockito:mockito-all:1.9.5'],
-            ['org.springframework:spring-test']
+            ['org.springframework:spring-test'],
+            ['com.jayway.jsonpath:json-path-assert:0.8.1']
     )
 }
 

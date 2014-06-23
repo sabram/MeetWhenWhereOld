@@ -1,7 +1,7 @@
 package com.shaunabram.letsmeet;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
@@ -12,7 +12,7 @@ import javax.inject.Inject;
 @RequestMapping("/meetings")
 public class MeetingController {
 
-    private final AtomicLong counter = new AtomicLong();
+    private final AtomicInteger counter = new AtomicInteger();
 
 	private final Logger logger = LoggerFactory.getLogger(MeetingController.class);
 

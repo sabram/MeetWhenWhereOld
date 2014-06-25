@@ -1,4 +1,6 @@
-// An example configuration file.
+// Protractor configuration file. See more at https://github.com/angular/protractor
+// This file basically defines where the selenium server is running, and what tests should be run
+// (tests are typically defined in *spec.js files)
 exports.config = {
     // The address of a running selenium server.
     seleniumAddress: 'http://localhost:4444/wd/hub',

@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 //            },
             your_target: {
                 options: {
-                    configFile: "lmreferenceConf.js",
+                    configFile: "protractor.conf.js",
 //                    configFile: "e2e.conf.js", // Target-specific config file
                     args: {}
 //                    args: {specs=["spec1.js","spec2.js"]} // Target-specific arguments

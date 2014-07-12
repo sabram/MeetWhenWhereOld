@@ -68,3 +68,29 @@ task itest(type: Test) {
         jettyStop.execute()
     }
 }
+
+task startServer {
+    doFirst {
+        jettyRun.httpPort = 9090    // Port for test
+        jettyRun.daemon = true
+        jettyRun.execute()
+    }
+}
+
+grunt_protractor.dependsOn startServer
+
+
+task stopServer {
+    jettyStop.stopPort = 9091   // Port for stop signal
+    jettyStop.stopKey = 'stopKey'
+    jettyStop.execute()
+}
+
+stopServer.dependsOn grunt_protractor
+
+task guitest(type: Test, dependsOn: stopServer) {
+    //NB Need to manually run: webdriver-manager start
+    //Haven't figured out how to automate yet.
+    //Although this may be useful: https://github.com/srs/gradle-grunt-plugin/issues/12
+}
+

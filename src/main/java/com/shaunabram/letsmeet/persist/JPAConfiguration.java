@@ -27,8 +27,13 @@ public class JPAConfiguration {
 
 	@Bean
 	public DataSource dataSource() throws SQLException {
+		final String DBNAME = "testdb";
+
+		//bug fix; http://stackoverflow.com/questions/15613722/spring-s-embedded-h2-datasource-and-db-close-on-exit
+		final String H2_SUFFIX = ";DB_CLOSE_ON_EXIT=FALSE";
 
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+		builder.setName(DBNAME + H2_SUFFIX);
 		return builder.setType(EmbeddedDatabaseType.H2).build();
 	}
 

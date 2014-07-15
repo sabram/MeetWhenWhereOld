@@ -22,7 +22,7 @@ import java.sql.SQLException;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.shaunabram.letsmeet.persist",
-		includeFilters = @ComponentScan.Filter(value = {OrdersRepository.class}, type = FilterType.ASSIGNABLE_TYPE))
+		includeFilters = @ComponentScan.Filter(value = {OrdersRepository.class, MeetingRepository.class}, type = FilterType.ASSIGNABLE_TYPE))
 @EnableTransactionManagement
 public class JPAConfiguration {
 

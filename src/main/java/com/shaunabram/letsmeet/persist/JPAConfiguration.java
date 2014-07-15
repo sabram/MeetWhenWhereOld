@@ -1,5 +1,6 @@
 package com.shaunabram.letsmeet.persist;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -53,6 +54,7 @@ public class JPAConfiguration {
 	}
 
 	@Bean
+	@Qualifier(value = "entityManager")
 	public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
 		return entityManagerFactory.createEntityManager();
 	}

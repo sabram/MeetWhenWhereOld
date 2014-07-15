@@ -3,6 +3,7 @@ package com.shaunabram.letsmeet.persist;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
@@ -20,6 +21,7 @@ import static com.shaunabram.letsmeet.persist.JPAAssertions.assertTableHasColumn
 public class OrderMappingIntegrationTests {
 
 	@Autowired
+	@Qualifier(value = "entityManager")
 	EntityManager manager;
 
 	@Test

@@ -2,12 +2,12 @@
 //the script's classpath here using the buildscript() method
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-snapshot" }
         mavenLocal()
-        jcenter()
+        mavenCentral()
+        maven { url "http://repo.spring.io/libs-release" }
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.4.RELEASE")
         classpath 'com.moowork.gradle:gradle-grunt-plugin:0.5'
     }
 }
@@ -17,12 +17,13 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'jetty'
 apply plugin: 'grunt'
+apply plugin: 'war'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
 
-jar {
+war {
     baseName = 'meetwhenwhere'
     version =  '0.1.0'
 }
@@ -30,12 +31,13 @@ jar {
 version = '1.0'
 
 repositories {
+    mavenLocal()
     mavenCentral()
-    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url "http://repo.spring.io/libs-release" }
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     compile("com.fasterxml.jackson.core:jackson-databind")
     compile('javax.inject:javax.inject:1')
     compile('com.google.guava:guava:17.0')
@@ -53,6 +55,11 @@ dependencies {
             ['com.jayway.jsonpath:json-path-assert:0.8.1']
     )
 }
+
+configurations {
+    providedRuntime
+}
+
 
 
 test {

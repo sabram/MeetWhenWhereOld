@@ -1,6 +1,6 @@
 var meetModule = angular.module('MeetWhenWhere', ['restangular']);
 
-letsMeetModule.controller('MeetingCtrl', function($scope, $http, Restangular) {
+meetModule.controller('MeetingCtrl', function($scope, $http, Restangular) {
 
 //    $scope.meeting = Restangular.one('meeting').get().$object;
 

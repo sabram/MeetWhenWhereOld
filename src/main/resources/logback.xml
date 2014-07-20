@@ -7,7 +7,7 @@
         </layout>
     </appender>
 
-    <logger name="com.shaunabram" level="debug"/>
+    <logger name="com.meetwhenwhere" level="debug"/>
 
 
     <root level="info">

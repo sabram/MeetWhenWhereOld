@@ -17,14 +17,13 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'jetty'
 apply plugin: 'grunt'
-apply plugin: 'war'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
 
 jar {
-    baseName = 'gs-rest-service'
+    baseName = 'meetwhenwhere'
     version =  '0.1.0'
 }
 

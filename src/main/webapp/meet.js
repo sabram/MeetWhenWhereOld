@@ -1,4 +1,4 @@
-var letsMeetModule = angular.module('letsMeet', ['restangular']);
+var meetModule = angular.module('MeetWhenWhere', ['restangular']);
 
 letsMeetModule.controller('MeetingCtrl', function($scope, $http, Restangular) {
 

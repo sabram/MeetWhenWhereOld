@@ -7,4 +7,6 @@ public interface Dao {
     String getStuff();
 
 	List<Meeting> getAllMeetings();
+
+	Meeting addMeeting(Meeting meeting);
 }

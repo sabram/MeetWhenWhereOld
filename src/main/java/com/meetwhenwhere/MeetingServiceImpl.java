@@ -29,4 +29,8 @@ public class MeetingServiceImpl implements MeetingService {
 		return dao.getAllMeetings();
 	}
 
+	@Override
+	public Meeting addMeeting(Meeting meeting) {
+		return dao.addMeeting(meeting);
+	}
 }

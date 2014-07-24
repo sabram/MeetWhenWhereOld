@@ -1,7 +1,6 @@
 package com.meetwhenwhere;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
@@ -11,8 +10,6 @@ import javax.inject.Inject;
 @Controller
 @RequestMapping("/meetings")
 public class MeetingController {
-
-    private final AtomicInteger counter = new AtomicInteger();
 
 	private final Logger logger = LoggerFactory.getLogger(MeetingController.class);
 
@@ -42,10 +39,11 @@ public class MeetingController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	public Meeting newMeeting(@RequestBody Meeting meeting) {
-		System.out.println("I am in the controller and got meeting: " + meeting);
-		Meeting returnMeeting = new Meeting(counter.incrementAndGet(), meeting.getName() + "newMeeting");
-		System.out.println("returning meeting: " + returnMeeting);
-		return returnMeeting;
+		return meetingService.addMeeting(meeting);
+//		System.out.println("I am in the controller and got meeting: " + meeting);
+//		Meeting returnMeeting = new Meeting(counter.incrementAndGet(), meeting.getName() + "newMeeting");
+//		System.out.println("returning meeting: " + returnMeeting);
+//		return returnMeeting;
 	}
 
 

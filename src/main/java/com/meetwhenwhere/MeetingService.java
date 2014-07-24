@@ -8,4 +8,6 @@ public interface MeetingService {
 
 	public List<Meeting> getAllMeetings();
 
+	public Meeting addMeeting(Meeting meeting);
+
 }

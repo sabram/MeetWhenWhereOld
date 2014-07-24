@@ -17,7 +17,7 @@ public class DaoImpl implements Dao {
 	public DaoImpl() {
 		logger.debug("In DaoImpl constructor");
 		meetings = Lists.newArrayList();//poor mans persistence!!
-		Meeting tstMeeting = new Meeting(1, "tstMeetingFromDao");
+		Meeting tstMeeting = new Meeting(0, "tstMeetingFromDao");
 		meetings.add(tstMeeting);
 	}
 

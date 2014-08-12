@@ -16,7 +16,7 @@ import static org.fest.assertions.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-@ActiveProfiles(profiles = "test2")
+@ActiveProfiles(profiles = "test")
 public class MeetingRepositoryTest {
 	@Autowired
 	private MeetingRepository repository;

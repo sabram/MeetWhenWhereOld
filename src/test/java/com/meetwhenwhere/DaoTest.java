@@ -1,5 +1,6 @@
 package com.meetwhenwhere;
 
+import com.meetwhenwhere.model.Meeting;
 import org.junit.Test;
 import java.util.List;
 import static org.fest.assertions.api.Assertions.assertThat;

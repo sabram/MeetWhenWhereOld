@@ -2,7 +2,7 @@ package com.meetwhenwhere.persist.repository;
 
 import com.google.common.collect.Lists;
 import com.meetwhenwhere.Application;
-import com.meetwhenwhere.persist.domain.Meeting;
+import com.meetwhenwhere.model.Meeting;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

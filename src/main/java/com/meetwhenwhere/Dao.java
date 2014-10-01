@@ -1,5 +1,7 @@
 package com.meetwhenwhere;
 
+import com.meetwhenwhere.model.Meeting;
+
 import java.util.List;
 
 public interface Dao {

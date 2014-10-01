@@ -1,6 +1,7 @@
 package com.meetwhenwhere;
 
 import com.google.common.collect.Lists;
+import com.meetwhenwhere.model.Meeting;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;

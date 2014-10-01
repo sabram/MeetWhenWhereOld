@@ -1,5 +1,8 @@
 package com.meetwhenwhere;
 
+import com.google.common.collect.Lists;
+import com.meetwhenwhere.model.Meeting;
+import com.meetwhenwhere.persist.repository.MeetingRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -10,11 +13,11 @@ import org.slf4j.LoggerFactory;
 @Service
 public class MeetingServiceImpl implements MeetingService {
 
-	private final Dao dao;
+	private final MeetingRepository dao;
 	private final Logger logger = LoggerFactory.getLogger(MeetingServiceImpl.class);
 
 	@Inject
-	public MeetingServiceImpl(Dao dao) {
+	public MeetingServiceImpl(MeetingRepository dao) {
 		logger.debug("In MeetingServiceImpl constructor");
 		this.dao = dao;
 	}
@@ -26,11 +29,12 @@ public class MeetingServiceImpl implements MeetingService {
 
 	@Override
 	public List<Meeting> getAllMeetings() {
-		return dao.getAllMeetings();
+		return Lists.newArrayList(dao.findAll());
 	}
 
 	@Override
 	public Meeting addMeeting(Meeting meeting) {
-		return dao.addMeeting(meeting);
+		Meeting m = new Meeting(meeting.getName());
+		return dao.save(m);
 	}
 }

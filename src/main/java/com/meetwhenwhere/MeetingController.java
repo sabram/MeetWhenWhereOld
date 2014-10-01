@@ -1,6 +1,9 @@
 package com.meetwhenwhere;
 
 import java.util.List;
+
+import com.google.common.collect.Lists;
+import com.meetwhenwhere.model.Meeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
@@ -33,13 +36,21 @@ public class MeetingController {
 	public @ResponseBody
 	List<Meeting> meetings() {
 		logger.debug("Returning all meetings");
-		return meetingService.getAllMeetings();
+		List<Meeting> allMeetings = meetingService.getAllMeetings();
+		List<Meeting> retMeetings = Lists.newArrayList();
+		for (Meeting meeting : allMeetings) {
+			Meeting m = new Meeting(meeting.getId(), meeting.getName());
+			retMeetings.add(m);
+		}
+		return retMeetings;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	public Meeting newMeeting(@RequestBody Meeting meeting) {
-		return meetingService.addMeeting(meeting);
+		Meeting meeting1 = meetingService.addMeeting(meeting);
+		return new Meeting(meeting1.getId(), meeting1.getName());
+
 //		System.out.println("I am in the controller and got meeting: " + meeting);
 //		Meeting returnMeeting = new Meeting(counter.incrementAndGet(), meeting.getName() + "newMeeting");
 //		System.out.println("returning meeting: " + returnMeeting);
